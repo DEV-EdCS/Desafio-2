@@ -1,0 +1,273 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+}
+
+.conteudo {
+    display: flex;
+}
+
+.conteudo__formulario {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 5% 5% 5% 5%;
+}
+
+.conteudo__formulario__titulo {
+    font-size: 24px;
+    padding-top: 16px;
+    padding-bottom: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #292524;
+}
+
+.conteudo__formulario__voltar {
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    color: #57534E;
+    text-decoration: none;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.conteudo__formulario__descricao {
+    font-size: 16px;
+    color: #57534E;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.conteudo__formulario__titulo-sessao {
+    font-size: 16px;
+    padding-top: 48px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    color: #292524;
+}
+
+.conteudo__formulario__dados {
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo__formulario__dados__legenda {
+    font-size: 14px;
+    color: #57534E;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 16px;
+}
+
+.conteudo__formulario__dados__legenda__opcoes {
+    padding: 8px 8px;
+    font-size: 14px;
+    color: #292524;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    border-radius: 8px;
+}
+
+.conteudo__formulario__dados__resposta {
+    padding: 8px;
+    border-radius: 8px;
+    gap: 8px;
+    border-color: #D6D3D1;
+    color: #292524;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.conteudo__formulario__dados__alert {
+    display: flex;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+}
+
+
+.conteudo__formulario__dados__arquivo {
+    border: 2px dashed #D6D3D1;
+    border-radius: 8px;
+    padding: 30px;
+    text-align: center;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.conteudo__formulario__dados__arquivo:hover {
+    border-color: #F3541C;
+}
+
+.conteudo__formulario__dados__arquivo input[type="file"] {
+    display: none;
+}
+
+.conteudo__formulario__dados__nuvem-icone {
+    font-size: 40px;
+    color: #D6D3D1;
+}
+
+.conteudo__formulario__dados__texto {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 16px;
+    color: #A8A29E;
+    margin-top: 10px;
+}
+
+.input-escondido {
+    display: none;
+}
+
+.conteudo__formulario__dados__separacao {
+    display: grid;
+    grid-template-columns: 54% 34%;
+    justify-content: space-between;
+}
+
+.conteudo__formulario__dados__separacao__posicao {
+    display: flex;
+    flex-direction: column;
+}
+
+.conteudo__formulario__dados__checkbox {
+    display: grid;
+    grid-template-columns: 48% 48%;
+    justify-content: space-between;
+    padding-bottom: 8px;
+}
+
+.conteudo__formulario__dados__checkbox__alinhamento {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #D6D3D1;
+    gap: 8px;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: border-color 0.3s;
+}
+
+.conteudo__formulario__dados__checkbox__alinhamento__radio {
+    margin-right: 85%;
+}
+
+.conteudo__formulario__dados__checkbox__alinhamento_elementos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    color: #000000CC;
+}
+
+.conteudo__formulario__politica {
+    margin-top: 36px;
+    margin-bottom: 48px;
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+strong .conteudo__formulario__politica {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.conteudo__formulario__botoes {
+    display: flex;
+    justify-content: flex-end;
+    gap: 16px;
+
+}
+
+.conteudo__formulario__botoes__cancelar {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    padding: 14px;
+    border: solid 1px #E43A12;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+    color: #E43A12;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.conteudo__formulario__botoes__enviar {
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 16px;
+    padding: 14px;
+    border: solid 1px #FFFFFF;
+    border: none;
+    border-radius: 8px;
+    background-color: #E43A12;
+    color: #FFFFFF;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+input[type="reset"]:hover {
+    background-color: #E43A12;
+    color: #FFFFFF;
+}
+
+input[type="submit"]:hover {
+    background-color: #FFFFFF; 
+    color: #E43A12;
+    border: solid 1px #E43A12;
+}
+
+.conteudo__imagens {
+    background-color: #2135A6;
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    position: sticky;
+    /* Mantém a imagem fixa */
+    top: 0;
+    /* Fixa a imagem no topo da tela */
+}
+
+.email {
+    font-size: 14px;
+    color: #DC2626;
+}
+
+.termos-politica {
+    color: #E43A12;
+}

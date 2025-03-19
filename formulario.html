@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Inscrição</title>
+    <link rel="stylesheet" href="./styles/formulario.css">
+</head>
+
+<body>
+    <header></header>
+    <main class="conteudo">
+        <section class="conteudo__formulario">
+            <nav>
+                <a href="index.html" class="conteudo__formulario__voltar"><img src="./img/seta_esquerda.png"
+                        width="24px" alt="Voltar à página anterior">Voltar</a>
+            </nav>
+            <h1 class="conteudo__formulario__titulo">Formulário de inscrição</h1>
+            <p class="conteudo__formulario__descricao">Preencha os dados abaixo para fazer sua inscrição no Programa
+                Trilhas.</p>
+
+            <form action="confirmacao.html" method="GET" class="conteudo__formulario__dados">
+                <h2 class="conteudo__formulario__titulo-sessao">Informações do participante</h2>
+                <label for="nome" class="conteudo__formulario__dados__legenda">Nome completo</label>
+                <input type="text" id="nome" name="nome" class="conteudo__formulario__dados__resposta">
+
+                <label for="data" class="conteudo__formulario__dados__legenda">Data de nascimento</label>
+                <input id="data" name="data" class="conteudo__formulario__dados__resposta" type="date">
+
+                <label for="cpf" class="conteudo__formulario__dados__legenda">CPF</label>
+                <input id="cpf" name="cpf" pattern="\d{11}" maxlength="11" minlength="11" required type="number"
+                    placeholder="Digite apenas números, sem ponto ou traços"
+                    class="conteudo__formulario__dados__resposta">
+
+                <label for="genero" class="conteudo__formulario__dados__legenda">Sexo</label>
+                <select class="conteudo__formulario__dados__legenda__opcoes" name="genero" id="genero" required>
+                    <option value="">Selecione</option>
+                    <option value="masculino">Masculino</option>
+                    <option value="feminino">Feminino</option>
+                    <option value="outro">Outro</option>
+                </select>
+
+                <label for="email" class="conteudo__formulario__dados__legenda">E-mail</label>
+                <input type="email" id="email" name="email" class="conteudo__formulario__dados__resposta">
+
+                <div class="conteudo__formulario__dados__alert">
+                    <img src="./img/alert_circle.png" width="20px" " alt=""> 
+                <p class=" email" alt="Ícone de alerta!">Insira um e-mail válido</p>
+                </div>
+
+                <label for="telefone" class="conteudo__formulario__dados__legenda">Telefone</label>
+                <input type="tel" id="telefone" name="telefone" class="conteudo__formulario__dados__resposta">
+
+                <label for="identidade" class="conteudo__formulario__dados__legenda">Documento de identidade</label>
+                <label class="conteudo__formulario__dados__arquivo" for="identidade">
+                    <div class="conteudo__formulario__dados__nuvem-icone"><img src="./img/upload_nuvem.png" width="48px"
+                            alt=""></div>
+                    <div class="conteudo__formulario__dados__texto">Clique aqui para selecionar o arquivo</div>
+
+                </label>
+                <input id="identidade" name="identidade" type="file" name="documento" class="input-escondido"
+                    onchange="mostrarNomeArquivo(this)">
+
+                <h2 class="conteudo__formulario__titulo-sessao">Endereço residencial</h3>
+                    <label for="cep" class="conteudo__formulario__dados__legenda">CEP</label>
+                    <input id="cep" name="cep" type="number" class="conteudo__formulario__dados__resposta">
+                    
+                    <div class="conteudo__formulario__dados__separacao">
+                        <div class="conteudo__formulario__dados__separacao__posicao">
+                            <label for="rua" class="conteudo__formulario__dados__legenda">Rua</label>
+                            <input id="rua" name="rua" type="text" class="conteudo__formulario__dados__resposta">
+                        </div>
+                        <div class="conteudo__formulario__dados__separacao__posicao">
+                            <label for="casa" class="conteudo__formulario__dados__legenda">Número</label>
+                            <input id="casa" name="casa" type="number" class="conteudo__formulario__dados__resposta">
+                        </div>
+                    </div>
+                    <div class="conteudo__formulario__dados__separacao">
+                        <div class="conteudo__formulario__dados__separacao__posicao">
+                            <label for="cidade" class="conteudo__formulario__dados__legenda">Cidade</label>
+                            <input id="cidade" name="cidade" type="text" class="conteudo__formulario__dados__resposta">
+                        </div>
+                        <div class="conteudo__formulario__dados__separacao__posicao">
+                            <label for="estado" class="conteudo__formulario__dados__legenda">Estado</label>
+                            <input id="estado" name="estado" type="text" class="conteudo__formulario__dados__resposta">
+                        </div>
+                    </div>
+                    <label for="residencia" class="conteudo__formulario__dados__legenda">Comprovante de
+                        residência</label>
+                    <label for="residencia" class="conteudo__formulario__dados__arquivo">
+                        <div class="conteudo__formulario__dados__nuvem-icone"><img src="./img/upload_nuvem.png"
+                                width="48px" alt=""></div>
+                        <div class="conteudo__formulario__dados__texto">Clique aqui para selecionar o arquivo</div>
+                    </label>
+                    <input id="residencia" name="residencia" type="file" class="input-escondido"
+                        onchange="mostrarNomeArquivo(this)">
+
+                    <h2 class="conteudo__formulario__titulo-sessao">Trilhas de aprendizagem</h2>
+                    <label class="conteudo__formulario__dados__legenda" for="trilha" alt="">Selecione apenas uma
+                        trilha</label><br>
+
+                    <div class="conteudo__formulario__dados__checkbox">
+                        <div class="conteudo__formulario__dados__checkbox__alinhamento">
+                            <input id="trilha_front" name="trilha"
+                                class="conteudo__formulario__dados__checkbox__alinhamento__radio" type="radio"
+                                value="front">
+                            <div class="conteudo__formulario__dados__checkbox__alinhamento_elementos">
+                                <img src="./img/icone_front.png" width="40px" alt="">
+                                <label for="trilha_front">Programação Front-end</label>
+                            </div>
+                        </div>
+
+                        <div class="conteudo__formulario__dados__checkbox__alinhamento">
+                            <input id="trilha_back" name="trilha"
+                                class="conteudo__formulario__dados__checkbox__alinhamento__radio" type="radio"
+                                value="back">
+                            <div class="conteudo__formulario__dados__checkbox__alinhamento_elementos">
+                                <img src="./img/icone_back.png" width="40px" alt="">
+                                <label for="trilha_back">Programação Back-end</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conteudo__formulario__dados__checkbox">
+                        <div class="conteudo__formulario__dados__checkbox__alinhamento">
+                            <input id="trilha_jogos" name="trilha"
+                                class="conteudo__formulario__dados__checkbox__alinhamento__radio" type="radio"
+                                value="jogos">
+                            <div class="conteudo__formulario__dados__checkbox__alinhamento_elementos">
+                                <img src="./img/icone_games.png" width="40px" alt="">
+                                <label for="trilha_jogos">Programação de Jogos</label>
+                            </div>
+                        </div>
+
+                        <div class="conteudo__formulario__dados__checkbox__alinhamento">
+                            <input id="trilha_ux" name="trilha"
+                                class="conteudo__formulario__dados__checkbox__alinhamento__radio" type="radio"
+                                value="design">
+                            <div class="conteudo__formulario__dados__checkbox__alinhamento_elementos">
+                                <img src="./img/icone_design-ux.png" width="40px" alt="">
+                                <label for="trilha_ux">Design e Experiência</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conteudo__formulario__dados__checkbox">
+                        <div class="conteudo__formulario__dados__checkbox__alinhamento">
+                            <input id="trilha_ciencia" name="trilha"
+                                class="conteudo__formulario__dados__checkbox__alinhamento__radio" type="radio"
+                                value="ciencia">
+                            <div class="conteudo__formulario__dados__checkbox__alinhamento_elementos">
+                                <img src="./img/icone_dados.png" width="40px" alt="">
+                                <label for="trilha_ciencia">Ciência de Dados</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="conteudo__formulario__politica">
+                        <input id="termos" name="termos" type="checkbox">
+                        <label for="termos">Declaro que li e concordo com os <strong class="termos-politica">Termos e
+                                Condições</strong> e com a
+                            <strong class="termos-politica">Política de Privacidade</strong></label>
+                    </div>
+
+                    <div class="conteudo__formulario__botoes">
+                        <input class="conteudo__formulario__botoes__cancelar" type="reset" value="Cancelar">
+                        <input class="conteudo__formulario__botoes__enviar" type="submit" value="Inscreva-se">
+                    </div>
+            </form>
+        </section>
+
+        <section class="conteudo__imagens">
+            <img src="./img/person.png" width="500px" alt="Ilustração de um jovem estudando no computador">
+            <img src="./img/logo_trilhas.png" width="212.25pxpx" alt="Logos do programa trilhas e do Inova Maranhão">
+        </section>
+    </main>
+    <footer></footer>
+</body>
+
+</html>
