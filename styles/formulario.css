@@ -282,11 +282,10 @@ input[type="submit"]:hover {
     color: #E43A12;
 }
 
-@media (max-width: 1050px) {
+/* @media (max-width: 1050px) {
     .conteudo {
         display: flex;
         flex-direction: column-reverse;
-        height: 100vh;
     }
 
     .conteudo__formulario {
@@ -297,10 +296,106 @@ input[type="submit"]:hover {
     .conteudo__imagens {
         position: relative;
         height: auto;
-        padding: 2% 5% 2% 5%;
+        padding: 3% 0 3% 0;
     }
 
     .conteudo__imagens__estudante {
         display: none;
+    }
+}
+
+@media (max-width: 720px) {
+    .conteudo__imagens {
+        padding: 5% 0 5% 0;
+    }
+} */
+
+@media (max-width: 1050px) {
+    .conteudo {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .conteudo__formulario {
+        width: 90%;
+        margin: auto;
+        padding: 4%;
+    }
+
+    .conteudo__imagens {
+        position: relative;
+        height: auto;
+        padding: 5% 0;
+    }
+
+    .conteudo__imagens__estudante {
+        display: none;
+    }
+
+    .conteudo__formulario__dados__separacao {
+        grid-template-columns: 100%;
+        gap: 1rem;
+    }
+
+    .conteudo__formulario__dados__checkbox {
+        grid-template-columns: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .conteudo__formulario {
+        width: 95%;
+        padding: 6%;
+    }
+
+    .conteudo__formulario__titulo {
+        font-size: 1.3rem;
+    }
+
+    .conteudo__formulario__dados__resposta {
+        width: 100%;
+    }
+
+    .conteudo__formulario__botoes {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    .conteudo__formulario__botoes__cancelar,
+    .conteudo__formulario__botoes__enviar {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .conteudo__formulario {
+        width: 100%;
+        padding: 8%;
+    }
+
+    .conteudo__formulario__titulo {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .conteudo__formulario__descricao {
+        text-align: center;
+    }
+
+    .conteudo__formulario__dados__arquivo {
+        padding: 1.5rem;
+    }
+
+    .conteudo__formulario__botoes {
+        width: 100%;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .conteudo__formulario__botoes__cancelar,
+    .conteudo__formulario__botoes__enviar {
+        width: 100%;
     }
 }
