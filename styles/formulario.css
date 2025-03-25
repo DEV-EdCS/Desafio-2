@@ -282,4 +282,24 @@ input[type="submit"]:hover {
     color: #E43A12;
 }
 
-@media 
+@media (max-width: 1050px) {
+    .conteudo {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .conteudo__formulario {
+        margin: auto;
+        padding: 5% 5%;
+    }
+
+    .conteudo__imagens {
+        position: relative;
+        height: auto;
+        padding: 2% 5% 2% 5%;
+    }
+
+    .conteudo__imagens__estudante {
+        display: none;
+    }
+}
