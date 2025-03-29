@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Inscrição</title>
     <link rel="stylesheet" href="./styles/formulario.css">
+    <script src="./script/script.js" type="module" defer></script>
 </head>
 
 <body>
@@ -22,15 +23,13 @@
             <form action="confirmacao.html" method="GET" class="conteudo__formulario__dados">
                 <h2 class="conteudo__formulario__titulo-sessao">Informações do participante</h2>
                 <label for="nome" class="conteudo__formulario__dados__legenda">Nome completo</label>
-                <input type="text" id="nome" name="nome" class="conteudo__formulario__dados__resposta">
+                <input type="text" id="nome" name="nome" minlength="3" required class="conteudo__formulario__dados__resposta">
 
                 <label for="data" class="conteudo__formulario__dados__legenda">Data de nascimento</label>
-                <input id="data" name="data" class="conteudo__formulario__dados__resposta" type="date">
+                <input id="data" name="data" class="conteudo__formulario__dados__resposta" type="date" required>
 
                 <label for="cpf" class="conteudo__formulario__dados__legenda">CPF</label>
-                <input id="cpf" name="cpf" pattern="\d{11}" maxlength="11" minlength="11" required type="number"
-                    placeholder="Digite apenas números, sem ponto ou traços"
-                    class="conteudo__formulario__dados__resposta">
+                <input id="cpf" name="cpf" minlength="11" maxlength="14" required type="text" pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" placeholder="Digite um CPF no formato: xxx.xxx.xxx-xx" class="conteudo__formulario__dados__resposta">
 
                 <label for="genero" class="conteudo__formulario__dados__legenda">Sexo</label>
                 <select class="conteudo__formulario__dados__legenda__opcoes" name="genero" id="genero" required>
@@ -41,7 +40,7 @@
                 </select>
 
                 <label for="email" class="conteudo__formulario__dados__legenda">E-mail</label>
-                <input type="email" id="email" name="email" class="conteudo__formulario__dados__resposta">
+                <input type="email" id="email" name="email" class="conteudo__formulario__dados__resposta" minlength="4" required>
 
                 <div class="conteudo__formulario__dados__alert">
                     <img src="./img/alert_circle.png" width="20px" " alt=""> 
@@ -49,7 +48,7 @@
                 </div>
 
                 <label for="telefone" class="conteudo__formulario__dados__legenda">Telefone</label>
-                <input type="tel" id="telefone" name="telefone" class="conteudo__formulario__dados__resposta">
+                <input type="tel" id="telefone" name="telefone" class="conteudo__formulario__dados__resposta" required>
 
                 <label for="identidade" class="conteudo__formulario__dados__legenda">Documento de identidade</label>
                 <label class="conteudo__formulario__dados__arquivo" for="identidade">
@@ -59,30 +58,30 @@
 
                 </label>
                 <input id="identidade" name="identidade" type="file" name="documento" class="input-escondido"
-                    onchange="mostrarNomeArquivo(this)">
+                    onchange="mostrarNomeArquivo(this)" required>
 
                 <h2 class="conteudo__formulario__titulo-sessao">Endereço residencial</h2>
                     <label for="cep" class="conteudo__formulario__dados__legenda">CEP</label>
-                    <input id="cep" name="cep" type="text" class="conteudo__formulario__dados__resposta">
+                    <input id="cep" name="cep" type="text" class="conteudo__formulario__dados__resposta" required>
                     
                     <div class="conteudo__formulario__dados__separacao">
                         <div class="conteudo__formulario__dados__separacao__posicao">
                             <label for="rua" class="conteudo__formulario__dados__legenda">Rua</label>
-                            <input id="rua" name="rua" type="text" class="conteudo__formulario__dados__resposta">
+                            <input id="rua" name="rua" type="text" class="conteudo__formulario__dados__resposta"required>
                         </div>
                         <div class="conteudo__formulario__dados__separacao__posicao">
                             <label for="casa" class="conteudo__formulario__dados__legenda">Número</label>
-                            <input id="casa" name="casa" type="number" class="conteudo__formulario__dados__resposta">
+                            <input id="casa" name="casa" type="number" class="conteudo__formulario__dados__resposta"required>
                         </div>
                     </div>
                     <div class="conteudo__formulario__dados__separacao">
                         <div class="conteudo__formulario__dados__separacao__posicao">
                             <label for="cidade" class="conteudo__formulario__dados__legenda">Cidade</label>
-                            <input id="cidade" name="cidade" type="text" class="conteudo__formulario__dados__resposta">
+                            <input id="cidade" name="cidade" type="text" class="conteudo__formulario__dados__resposta"required>
                         </div>
                         <div class="conteudo__formulario__dados__separacao__posicao">
                             <label for="estado" class="conteudo__formulario__dados__legenda">Estado</label>
-                            <input id="estado" name="estado" type="text" class="conteudo__formulario__dados__resposta">
+                            <input id="estado" name="estado" type="text" class="conteudo__formulario__dados__resposta"required>
                         </div>
                     </div>
                     <label for="residencia" class="conteudo__formulario__dados__legenda">Comprovante de
@@ -93,7 +92,7 @@
                         <div class="conteudo__formulario__dados__texto">Clique aqui para selecionar o arquivo</div>
                     </label>
                     <input id="residencia" name="residencia" type="file" class="input-escondido"
-                        onchange="mostrarNomeArquivo(this)">
+                        onchange="mostrarNomeArquivo(this)"required>
 
                     <h2 class="conteudo__formulario__titulo-sessao">Trilhas de aprendizagem</h2>
                     <label class="conteudo__formulario__dados__legenda" for="trilha" alt="">Selecione apenas uma
@@ -103,7 +102,7 @@
                         <div class="conteudo__formulario__dados__checkbox__alinhamento">
                             <input id="trilha_front" name="trilha"
                                 class="conteudo__formulario__dados__checkbox__alinhamento__radio" type="radio"
-                                value="front">
+                                value="front" required>
                             <div class="conteudo__formulario__dados__checkbox__alinhamento_elementos">
                                 <img src="./img/icone_front.png" width="40px" alt="">
                                 <label for="trilha_front">Programação Front-end</label>
@@ -113,7 +112,7 @@
                         <div class="conteudo__formulario__dados__checkbox__alinhamento">
                             <input id="trilha_back" name="trilha"
                                 class="conteudo__formulario__dados__checkbox__alinhamento__radio" type="radio"
-                                value="back">
+                                value="back" required>
                             <div class="conteudo__formulario__dados__checkbox__alinhamento_elementos">
                                 <img src="./img/icone_back.png" width="40px" alt="">
                                 <label for="trilha_back">Programação Back-end</label>
@@ -125,7 +124,7 @@
                         <div class="conteudo__formulario__dados__checkbox__alinhamento">
                             <input id="trilha_jogos" name="trilha"
                                 class="conteudo__formulario__dados__checkbox__alinhamento__radio" type="radio"
-                                value="jogos">
+                                value="jogos" required>
                             <div class="conteudo__formulario__dados__checkbox__alinhamento_elementos">
                                 <img src="./img/icone_games.png" width="40px" alt="">
                                 <label for="trilha_jogos">Programação de Jogos</label>
@@ -135,7 +134,7 @@
                         <div class="conteudo__formulario__dados__checkbox__alinhamento">
                             <input id="trilha_ux" name="trilha"
                                 class="conteudo__formulario__dados__checkbox__alinhamento__radio" type="radio"
-                                value="design">
+                                value="design" required>
                             <div class="conteudo__formulario__dados__checkbox__alinhamento_elementos">
                                 <img src="./img/icone_design-ux.png" width="40px" alt="">
                                 <label for="trilha_ux">Design e Experiência</label>
@@ -147,7 +146,7 @@
                         <div class="conteudo__formulario__dados__checkbox__alinhamento">
                             <input id="trilha_ciencia" name="trilha"
                                 class="conteudo__formulario__dados__checkbox__alinhamento__radio" type="radio"
-                                value="ciencia">
+                                value="ciencia" required>
                             <div class="conteudo__formulario__dados__checkbox__alinhamento_elementos">
                                 <img src="./img/icone_dados.png" width="40px" alt="">
                                 <label for="trilha_ciencia">Ciência de Dados</label>
@@ -156,7 +155,7 @@
                     </div>
 
                     <div class="conteudo__formulario__politica">
-                        <input id="termos" name="termos" type="checkbox">
+                        <input id="termos" name="termos" type="checkbox" required>
                         <label for="termos">Declaro que li e concordo com os <strong class="termos-politica">Termos e
                                 Condições</strong> e com a
                             <strong class="termos-politica">Política de Privacidade</strong></label>
