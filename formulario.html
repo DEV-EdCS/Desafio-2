@@ -7,6 +7,8 @@
     <title>Formulário de Inscrição</title>
     <link rel="stylesheet" href="./styles/formulario.css">
     <script src="./script/script.js" type="module" defer></script>
+    <script src="./script/upload-arquivo.js" defer></script>
+
 </head>
 
 <body>
@@ -21,7 +23,7 @@
             <p class="conteudo__formulario__descricao">Preencha os dados abaixo para fazer sua inscrição no Programa
                 Trilhas.</p>
 
-            <form action="confirmacao.html" method="GET" class="conteudo__formulario__dados">
+            <form action="confirmacao.html" method="POST" class="conteudo__formulario__dados" data-formulario>
                 <h2 class="conteudo__formulario__titulo-sessao">Informações do participante</h2>
                 <fieldset>
                     <label for="nome" class="conteudo__formulario__dados__legenda">Nome completo</label>
@@ -76,17 +78,23 @@
                 </fieldset>
 
                 <fieldset>
-                    <label for="identidade" class="conteudo__formulario__dados__legenda">Documento de identidade</label>
-                    <label class="conteudo__formulario__dados__arquivo" for="identidade">
-                        <div class="conteudo__formulario__dados__nuvem-icone"><img src="./img/upload_nuvem.png"
-                                width="48px" alt=""></div>
-                        <div class="conteudo__formulario__dados__texto">Clique aqui para selecionar o arquivo</div>
-
+                    <legend>Documento de Identidade</legend>
+                    <label for="identidade" class="conteudo__formulario__dados__legenda">
+                        Documento de identidade
                     </label>
-                    <input id="identidade" name="identidade" type="file" name="documento" class="input-escondido"
-                        onchange="mostrarNomeArquivo(this)" required>
+                    <label class="conteudo__formulario__dados__arquivo" for="identidade">
+                        <div class="conteudo__formulario__dados__nuvem-icone">
+                            <img src="./img/upload_nuvem.png" width="48px" alt="Ícone de upload em nuvem">
+                        </div>
+                        <div class="conteudo__formulario__dados__texto-identidade">
+                            Clique aqui para selecionar o arquivo
+                        </div>
+                    </label>
+                    <input id="identidade" name="identidade" type="file" class="input-escondido"
+                        accept="application/pdf" required>
                     <span class="mensagem-erro"></span>
                 </fieldset>
+
 
                 <h2 class="conteudo__formulario__titulo-sessao">Endereço residencial</h2>
                 <fieldset>
@@ -131,16 +139,22 @@
                         </fieldset>
                     </div>
                 </div>
+
                 <fieldset>
-                    <label for="residencia" class="conteudo__formulario__dados__legenda">Comprovante de
-                        residência</label>
+                    <legend>Comprovante de residência</legend>
+                    <label for="residencia" class="conteudo__formulario__dados__legenda">
+                        Comprovante de residência
+                    </label>
                     <label for="residencia" class="conteudo__formulario__dados__arquivo">
-                        <div class="conteudo__formulario__dados__nuvem-icone"><img src="./img/upload_nuvem.png"
-                                width="48px" alt=""></div>
-                        <div class="conteudo__formulario__dados__texto">Clique aqui para selecionar o arquivo</div>
+                        <div class="conteudo__formulario__dados__nuvem-icone">
+                            <img src="./img/upload_nuvem.png" width="48px" alt="Ícone de upload em nuvem">
+                        </div>
+                        <div class="conteudo__formulario__dados__texto">
+                            Clique aqui para selecionar o arquivo
+                        </div>
                     </label>
                     <input id="residencia" name="residencia" type="file" class="input-escondido"
-                        onchange="mostrarNomeArquivo(this)" required>
+                        accept="application/pdf" required>
                     <span class="mensagem-erro"></span>
                 </fieldset>
 
@@ -213,11 +227,17 @@
                 </fieldset>
 
                 <fieldset class="conteudo__formulario__politica">
-                        <input id="termos" name="termos" type="checkbox" required>
-                        <span class="mensagem-erro"></span>
-                        <label for="termos">Declaro que li e concordo com os <strong class="termos-politica">Termos e
-                                Condições</strong> e com a
-                            <strong class="termos-politica">Política de Privacidade</strong></label>
+                    <input id="termos" name="termos" type="checkbox" required>
+                    <span class="mensagem-erro"></span>
+                    <label for="termos">Declaro que li e concordo com os <strong class="termos-politica">Termos e
+                            Condições</strong> e com a
+                        <strong class="termos-politica">Política de Privacidade</strong></label>
+                </fieldset>
+
+                <fieldset class="conteudo__formulario__politica">
+                    <input id="termos" name="termos" type="checkbox" required>
+                    <span class="mensagem-erro"></span>
+                    <label for="termos">Autorizo que o Inova Maranhão colete, use e utilize seus provedores para processar meus <strong class="termos-politica">dados cadastrados</strong> para verificar minha identidade e para prevenção de fraudes.</label>
                 </fieldset>
 
                 <div class="conteudo__formulario__botoes">

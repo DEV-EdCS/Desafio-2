@@ -5,12 +5,49 @@ import ehUmEmail from "./valida-email.js";
 import ehUmTelefone from "./valida-telefone.js";
 import ehUmArquivoPDF from "./valida-arquivo.js";
 
+const formulario = document.querySelector("[data-formulario]");
+
+formulario.addEventListener("submit", (e) => {
+    e.preventDefault();  
+
+    const listaRespostas = {
+        "nome": e.target.elements["nome"].value,
+        "aniversario": e.target.elements["aniversario"].value,
+        "cpf": e.target.elements["cpf"].value,
+        "genero": e.target.elements["genero"].value,
+        "email": e.target.elements["email"].value,
+        "telefone": e.target.elements["telefone"].value,
+        "identidade": e.target.elements["identidade"].files[0], // arquivo PDF
+        "cep": e.target.elements["cep"].value,
+        "rua": e.target.elements["rua"].value,
+        "numero": e.target.elements["casa"].value,
+        "cidade": e.target.elements["cidade"].value,
+        "estado": e.target.elements["estado"].value,
+        "residencia": e.target.elements["residencia"].files[0], // arquivo PDF
+        "trilha": e.target.elements["trilha"].value,
+        "termos": e.target.elements["termos"].checked, // para checkbox
+    }
+    localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
+
+    window.location.href = "./confirmacao.html";
+})
+
 const camposDoFormulario = document.querySelectorAll("[required]");
 
 camposDoFormulario.forEach((campo) => {
     campo.addEventListener("blur", () => verificaCampo(campo));
     campo.addEventListener("invalid", evento => evento.preventDefault())
 })
+
+const residenciaInput = document.getElementById("residencia");
+
+residenciaInput.addEventListener("change", () => {
+    const arquivo = residenciaInput.files[0];
+    if (arquivo) {
+        const nomeArquivo = document.querySelector(".conteudo__formulario__dados__texto");
+        nomeArquivo.textContent = arquivo.name;
+    }
+});
 
 const tiposDeErro = [
     'valueMissing',

@@ -130,7 +130,8 @@ body {
     color: #D6D3D1;
 }
 
-.conteudo__formulario__dados__texto {
+.conteudo__formulario__dados__texto,
+.conteudo__formulario__dados__texto-identidade {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
     font-style: normal;
@@ -189,8 +190,7 @@ body {
 }
 
 .conteudo__formulario__politica {
-    margin-top: 2.25rem;
-    margin-bottom: 3rem;
+    margin-top: 1.5rem;
     display: flex;
     align-items: baseline;
     gap: 0.5rem;
@@ -205,11 +205,15 @@ strong .conteudo__formulario__politica {
     font-style: normal;
 }
 
+/* fieldset {
+    border: none;
+} */
+
 .conteudo__formulario__botoes {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
-
+    margin-top: 2.25rem;
 }
 
 .conteudo__formulario__botoes__cancelar {
@@ -281,34 +285,6 @@ input[type="submit"]:hover {
 .termos-politica {
     color: #E43A12;
 }
-
-/* @media (max-width: 1050px) {
-    .conteudo {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    .conteudo__formulario {
-        margin: auto;
-        padding: 5% 5%;
-    }
-
-    .conteudo__imagens {
-        position: relative;
-        height: auto;
-        padding: 3% 0 3% 0;
-    }
-
-    .conteudo__imagens__estudante {
-        display: none;
-    }
-}
-
-@media (max-width: 720px) {
-    .conteudo__imagens {
-        padding: 5% 0 5% 0;
-    }
-} */
 
 @media (max-width: 1050px) {
     .conteudo {
