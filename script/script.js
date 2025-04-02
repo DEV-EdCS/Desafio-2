@@ -7,6 +7,14 @@ import ehUmArquivoPDF from "./valida-arquivo.js";
 
 const formulario = document.querySelector("[data-formulario]");
 
+function converterArquivoParaBase64(arquivo, callback) {
+    const leitor = new FileReader();
+    leitor.onload = function (evento) {
+        callback(evento.target.result);
+    };
+    leitor.readAsDataURL(arquivo);
+}
+
 formulario.addEventListener("submit", (e) => {
     e.preventDefault();  
 
@@ -17,20 +25,37 @@ formulario.addEventListener("submit", (e) => {
         "genero": e.target.elements["genero"].value,
         "email": e.target.elements["email"].value,
         "telefone": e.target.elements["telefone"].value,
-        "identidade": e.target.elements["identidade"].files[0], // arquivo PDF
         "cep": e.target.elements["cep"].value,
         "rua": e.target.elements["rua"].value,
         "numero": e.target.elements["casa"].value,
         "cidade": e.target.elements["cidade"].value,
         "estado": e.target.elements["estado"].value,
-        "residencia": e.target.elements["residencia"].files[0], // arquivo PDF
         "trilha": e.target.elements["trilha"].value,
         "termos": e.target.elements["termos"].checked, // para checkbox
     }
-    localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
+    // Converte os arquivos PDF para Base64
+    const identidade = e.target.elements["identidade"].files[0];
+    const residencia = e.target.elements["residencia"].files[0];
 
-    window.location.href = "./confirmacao.html";
-})
+    if (identidade) {
+        converterArquivoParaBase64(identidade, (resultado) => {
+            listaRespostas.identidade = resultado;
+            if (residencia) {
+                converterArquivoParaBase64(residencia, (resultadoResidencia) => {
+                    listaRespostas.residencia = resultadoResidencia;
+                    localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
+                    window.location.href = "./confirmacao.html";
+                });
+            } else {
+                localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
+                window.location.href = "./confirmacao.html";
+            }
+        });
+    } else {
+        localStorage.setItem("cadastro", JSON.stringify(listaRespostas));
+        window.location.href = "./confirmacao.html";
+    }
+});
 
 const camposDoFormulario = document.querySelectorAll("[required]");
 
@@ -155,6 +180,7 @@ function verificaCampo(campo) {
             console.log(mensagem);
         }
     })
+    
     const mensagemErro = campo.parentNode.querySelector('.mensagem-erro');
     const validadorDeInput = campo.checkValidity();
 
