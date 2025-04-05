@@ -286,29 +286,35 @@ input[type="submit"]:hover {
     color: #E43A12;
 }
 
+/* Responsividade para telas até 1050px */
 @media (max-width: 1050px) {
     .conteudo {
+         /* Troca de grid para coluna única, com imagem abaixo do formulário */
         display: flex;
         flex-direction: column-reverse;
     }
 
     .conteudo__formulario {
+         /* Formulário ocupa quase toda a tela */
         width: 90%;
         margin: auto;
         padding: 4%;
     }
 
     .conteudo__imagens {
+        /* Imagem deixa de ser fixa, vira elemento normal */
         position: relative;
         height: auto;
         padding: 5% 0;
     }
 
     .conteudo__imagens__estudante {
+        /* Esconde imagem de estudante para economizar espaço */
         display: none;
     }
 
     .conteudo__formulario__dados__separacao {
+        /* Inputs que antes ficavam lado a lado, agora empilhados */
         grid-template-columns: 100%;
         gap: 1rem;
     }
@@ -318,6 +324,7 @@ input[type="submit"]:hover {
     }
 }
 
+/* Responsividade para telas até 768px */
 @media (max-width: 768px) {
     .conteudo__formulario {
         width: 95%;
@@ -332,6 +339,7 @@ input[type="submit"]:hover {
         width: 100%;
     }
 
+    /* Botões passam a ser empilhados e centralizados */
     .conteudo__formulario__botoes {
         flex-direction: column;
         align-items: center;
@@ -345,12 +353,14 @@ input[type="submit"]:hover {
     }
 }
 
+/* Responsividade para telas até 480px (celulares) */
 @media (max-width: 480px) {
     .conteudo__formulario {
         width: 100%;
         padding: 8%;
     }
 
+    /* Centraliza textos principais */
     .conteudo__formulario__titulo {
         font-size: 1.2rem;
         text-align: center;
@@ -360,10 +370,12 @@ input[type="submit"]:hover {
         text-align: center;
     }
 
+    /* Ajusta área de upload */
     .conteudo__formulario__dados__arquivo {
         padding: 1.5rem;
     }
 
+    /* Botões continuam empilhados */
     .conteudo__formulario__botoes {
         width: 100%;
         flex-direction: column;

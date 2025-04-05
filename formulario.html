@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Formulário de Inscrição</title>
     <link rel="stylesheet" href="./styles/formulario.css">
+    <!--  Importa o arquivo JS que vai validar o formulário. O defer faz com que eles sejam carregados depois que o HTML estiver pronto -->
     <script src="./script/script.js" type="module" defer></script>
     <script src="./script/upload-arquivo.js" defer></script>
 
@@ -23,10 +24,12 @@
             <p class="conteudo__formulario__descricao">Preencha os dados abaixo para fazer sua inscrição no Programa
                 Trilhas.</p>
 
+                <!-- Aqui começa o formulário! O action envia os dados para a página de confirmação. O method="POST" envia as informações com segurança -->
             <form action="confirmacao.html" method="POST" class="conteudo__formulario__dados" data-formulario>
                 <h2 class="conteudo__formulario__titulo-sessao">Informações do participante</h2>
-                <fieldset>
+                <fieldset> <!-- Cada <fieldset> agrupa campos que têm relação entre si -->
                     <label for="nome" class="conteudo__formulario__dados__legenda">Nome completo</label>
+                    <!-- "required" torna o campo obrigatório, significa que é obrigatório preencher -->
                     <input type="text" id="nome" name="nome" minlength="3" required
                         class="conteudo__formulario__dados__resposta">
                     <span class="mensagem-erro"></span>
@@ -41,6 +44,7 @@
 
                 <fieldset>
                     <label for="cpf" class="conteudo__formulario__dados__legenda">CPF</label>
+                    <!-- Aqui entra o CPF com validação de formato via pattern -->
                     <input id="cpf" name="cpf" minlength="11" maxlength="14" required type="text"
                         pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" placeholder="Digite um CPF no formato: xxx.xxx.xxx-xx"
                         class="conteudo__formulario__dados__resposta">
@@ -90,6 +94,7 @@
                             Clique aqui para selecionar o arquivo
                         </div>
                     </label>
+                    <!-- O "accept" só permite enviar arquivos PDF. -->
                     <input id="identidade" name="identidade" type="file" class="input-escondido"
                         accept="application/pdf" required>
                     <span class="mensagem-erro"></span>
