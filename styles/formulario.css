@@ -68,6 +68,12 @@ body {
     flex-direction: column;
 }
 
+.conteudo__formulario__dados__fieldset {
+    display: flex;
+    flex-direction: column;
+    margin: 1% 0 0% 0;
+}
+
 .conteudo__formulario__dados__legenda {
     font-size: 0.87rem;
     color: #57534E;
@@ -107,7 +113,6 @@ body {
     font-size: 0.87rem;
 }
 
-
 .conteudo__formulario__dados__arquivo {
     border: 0.125rem dashed #D6D3D1;
     border-radius: 0.5rem;
@@ -146,13 +151,8 @@ body {
 
 .conteudo__formulario__dados__separacao {
     display: grid;
-    grid-template-columns: 60% 34%;
+    grid-template-columns: 55% 40%;
     justify-content: space-between;
-}
-
-.conteudo__formulario__dados__separacao__posicao {
-    display: flex;
-    flex-direction: column;
 }
 
 .conteudo__formulario__dados__checkbox {
@@ -205,9 +205,29 @@ strong .conteudo__formulario__politica {
     font-style: normal;
 }
 
-/* fieldset {
+fieldset {
     border: none;
-} */
+} 
+
+span {
+    display: flex;
+    align-items: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 0.87rem;
+    color: #DC2626;
+}
+
+.conteudo__formulario__dados__resposta,
+.conteudo__formulario__dados__legenda__opcoes,
+.conteudo__formulario__dados__checkbox__alinhamento {
+    transition: border-color 0.3s;
+}
+
+.conteudo__formulario__dados__resposta:hover {
+    border-color: #F3541C;
+}
 
 .conteudo__formulario__botoes {
     display: flex;

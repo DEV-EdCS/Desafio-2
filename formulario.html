@@ -24,26 +24,38 @@
             <p class="conteudo__formulario__descricao">Preencha os dados abaixo para fazer sua inscrição no Programa
                 Trilhas.</p>
 
-                <!-- Aqui começa o formulário! O action envia os dados para a página de confirmação. O method="POST" envia as informações com segurança -->
+            <!-- Aqui começa o formulário! O action envia os dados para a página de confirmação. O method="POST" envia as informações com segurança -->
             <form action="confirmacao.html" method="POST" class="conteudo__formulario__dados" data-formulario>
                 <h2 class="conteudo__formulario__titulo-sessao">Informações do participante</h2>
-                <fieldset> <!-- Cada <fieldset> agrupa campos que têm relação entre si -->
-                    <label for="nome" class="conteudo__formulario__dados__legenda">Nome completo</label>
+                
+                <fieldset class="conteudo__formulario__dados__fieldset">
+                    <!-- Cada <fieldset> agrupa campos que têm relação entre si -->
+                    <label for="nome" class="conteudo__formulario__dados__legenda">Nome completo <strong
+                            class="termos-politica">*</strong></label>
                     <!-- "required" torna o campo obrigatório, significa que é obrigatório preencher -->
                     <input type="text" id="nome" name="nome" minlength="3" required
                         class="conteudo__formulario__dados__resposta">
                     <span class="mensagem-erro"></span>
                 </fieldset>
 
-                <fieldset>
-                    <label for="aniversario" class="conteudo__formulario__dados__legenda">Data de nascimento</label>
+                <fieldset class="conteudo__formulario__dados__fieldset">
+                    <label class="conteudo__formulario__dados__legenda" for="senha">Senha <strong
+                        class="termos-politica">*</strong></label>
+                        <input type="password" id="senha" name="senha" minlength="8" required
+                        class="conteudo__formulario__dados__resposta" placeholder="Deve conter pelo menos 1 letra, 1 número e 1 caractere especial">
+                </fieldset>
+
+                <fieldset class="conteudo__formulario__dados__fieldset">
+                    <label for="aniversario" class="conteudo__formulario__dados__legenda">Data de nascimento <strong
+                            class="termos-politica">*</strong></label>
                     <input id="aniversario" name="aniversario" class="conteudo__formulario__dados__resposta" type="date"
                         required>
                     <span class="mensagem-erro"></span>
                 </fieldset>
 
-                <fieldset>
-                    <label for="cpf" class="conteudo__formulario__dados__legenda">CPF</label>
+                <fieldset class="conteudo__formulario__dados__fieldset">
+                    <label for="cpf" class="conteudo__formulario__dados__legenda">CPF <strong
+                            class="termos-politica">*</strong></label>
                     <!-- Aqui entra o CPF com validação de formato via pattern -->
                     <input id="cpf" name="cpf" minlength="11" maxlength="14" required type="text"
                         pattern="\d{3}\.?\d{3}\.?\d{3}-?\d{2}" placeholder="Digite um CPF no formato: xxx.xxx.xxx-xx"
@@ -51,8 +63,9 @@
                     <span class="mensagem-erro"></span>
                 </fieldset>
 
-                <fieldset>
-                    <label for="genero" class="conteudo__formulario__dados__legenda">Sexo</label>
+                <fieldset class="conteudo__formulario__dados__fieldset">
+                    <label for="genero" class="conteudo__formulario__dados__legenda">Sexo <strong
+                            class="termos-politica">*</strong></label>
                     <select class="conteudo__formulario__dados__legenda__opcoes" name="genero" id="genero" required>
                         <option value="">Selecione</option>
                         <option value="masculino">Masculino</option>
@@ -62,29 +75,25 @@
                     <span class="mensagem-erro"></span>
                 </fieldset>
 
-                <fieldset>
-                    <label for="email" class="conteudo__formulario__dados__legenda">E-mail</label>
+                <fieldset class="conteudo__formulario__dados__fieldset">
+                    <label for="email" class="conteudo__formulario__dados__legenda">E-mail <strong
+                            class="termos-politica">*</strong></label>
                     <input type="email" id="email" name="email" class="conteudo__formulario__dados__resposta"
                         minlength="4" required>
                     <span class="mensagem-erro"></span>
                 </fieldset>
 
-                <div class="conteudo__formulario__dados__alert">
-                    <img src="./img/alert_circle.png" width="20px" " alt=""> 
-                <p class=" email" alt="Ícone de alerta!">Insira um e-mail válido</p>
-                </div>
-
-                <fieldset>
-                    <label for="telefone" class="conteudo__formulario__dados__legenda">Telefone</label>
+                <fieldset class="conteudo__formulario__dados__fieldset">
+                    <label for="telefone" class="conteudo__formulario__dados__legenda">Telefone <strong
+                            class="termos-politica">*</strong></label>
                     <input type="tel" id="telefone" name="telefone" class="conteudo__formulario__dados__resposta"
                         required>
                     <span class="mensagem-erro"></span>
                 </fieldset>
 
-                <fieldset>
-                    <legend>Documento de Identidade</legend>
+                <fieldset class="conteudo__formulario__dados__fieldset">
                     <label for="identidade" class="conteudo__formulario__dados__legenda">
-                        Documento de identidade
+                        Documento de identidade <strong class="termos-politica">*</strong>
                     </label>
                     <label class="conteudo__formulario__dados__arquivo" for="identidade">
                         <div class="conteudo__formulario__dados__nuvem-icone">
@@ -102,53 +111,51 @@
 
 
                 <h2 class="conteudo__formulario__titulo-sessao">Endereço residencial</h2>
-                <fieldset>
-                    <label for="cep" class="conteudo__formulario__dados__legenda">CEP</label>
+                <fieldset class="conteudo__formulario__dados__fieldset">
+                    <label for="cep" class="conteudo__formulario__dados__legenda">CEP <strong
+                            class="termos-politica">*</strong></label>
                     <input id="cep" name="cep" type="text" class="conteudo__formulario__dados__resposta" required>
                     <span class="mensagem-erro"></span>
                 </fieldset>
 
                 <div class="conteudo__formulario__dados__separacao">
-                    <div class="conteudo__formulario__dados__separacao__posicao">
-                        <fieldset>
-                            <label for="rua" class="conteudo__formulario__dados__legenda">Rua</label>
-                            <input id="rua" name="rua" type="text" class="conteudo__formulario__dados__resposta"
-                                required>
-                            <span class="mensagem-erro"></span>
-                        </fieldset>
-                    </div>
-                    <div class="conteudo__formulario__dados__separacao__posicao">
-                        <fieldset>
-                            <label for="casa" class="conteudo__formulario__dados__legenda">Número</label>
-                            <input id="casa" name="casa" type="number" class="conteudo__formulario__dados__resposta"
-                                required>
-                            <span class="mensagem-erro"></span>
-                        </fieldset>
-                    </div>
+
+                    <fieldset class="conteudo__formulario__dados__fieldset">
+                        <label for="rua" class="conteudo__formulario__dados__legenda">Rua <strong
+                                class="termos-politica">*</strong></label>
+                        <input id="rua" name="rua" type="text" class="conteudo__formulario__dados__resposta" required>
+                        <span class="mensagem-erro"></span>
+                    </fieldset>
+
+                    <fieldset class="conteudo__formulario__dados__fieldset">
+                        <label for="casa" class="conteudo__formulario__dados__legenda">Número <strong
+                                class="termos-politica">*</strong></label>
+                        <input id="casa" name="casa" type="number" class="conteudo__formulario__dados__resposta"
+                            required>
+                        <span class="mensagem-erro"></span>
+                    </fieldset>
+
                 </div>
                 <div class="conteudo__formulario__dados__separacao">
-                    <div class="conteudo__formulario__dados__separacao__posicao">
-                        <fieldset>
-                            <label for="cidade" class="conteudo__formulario__dados__legenda">Cidade</label>
+                        <fieldset class="conteudo__formulario__dados__fieldset">
+                            <label for="cidade" class="conteudo__formulario__dados__legenda">Cidade <strong
+                                    class="termos-politica">*</strong></label>
                             <input id="cidade" name="cidade" type="text" class="conteudo__formulario__dados__resposta"
                                 required>
                             <span class="mensagem-erro"></span>
                         </fieldset>
-                    </div>
-                    <div class="conteudo__formulario__dados__separacao__posicao">
-                        <fieldset>
-                            <label for="estado" class="conteudo__formulario__dados__legenda">Estado</label>
+                        <fieldset class="conteudo__formulario__dados__fieldset">
+                            <label for="estado" class="conteudo__formulario__dados__legenda">Estado <strong
+                                    class="termos-politica">*</strong></label>
                             <input id="estado" name="estado" type="text" class="conteudo__formulario__dados__resposta"
                                 required>
                             <span class="mensagem-erro"></span>
                         </fieldset>
-                    </div>
                 </div>
 
-                <fieldset>
-                    <legend>Comprovante de residência</legend>
+                <fieldset class="conteudo__formulario__dados__fieldset">
                     <label for="residencia" class="conteudo__formulario__dados__legenda">
-                        Comprovante de residência
+                        Comprovante de residência <strong class="termos-politica">*</strong>
                     </label>
                     <label for="residencia" class="conteudo__formulario__dados__arquivo">
                         <div class="conteudo__formulario__dados__nuvem-icone">
@@ -165,9 +172,9 @@
 
                 <h2 class="conteudo__formulario__titulo-sessao">Trilhas de aprendizagem</h2>
 
-                <fieldset>
+                <fieldset class="conteudo__formulario__dados__fieldset">
                     <label class="conteudo__formulario__dados__legenda" for="trilha" alt="">Selecione apenas uma
-                        trilha</label><br>
+                        trilha <strong class="termos-politica">*</strong></label><br>
 
                     <div class="conteudo__formulario__dados__checkbox">
                         <div class="conteudo__formulario__dados__checkbox__alinhamento">
@@ -242,7 +249,9 @@
                 <fieldset class="conteudo__formulario__politica">
                     <input id="termos" name="termos" type="checkbox" required>
                     <span class="mensagem-erro"></span>
-                    <label for="termos">Autorizo que o Inova Maranhão colete, use e utilize seus provedores para processar meus <strong class="termos-politica">dados cadastrados</strong> para verificar minha identidade e para prevenção de fraudes.</label>
+                    <label for="termos">Autorizo que o <strong class="termos-politica">Inova Maranhão</strong> colete,
+                        use e utilize seus provedores para processar meus <strong class="termos-politica">dados
+                            cadastrados</strong>, para verificar minha identidade e para prevenção de fraudes.</label>
                 </fieldset>
 
                 <div class="conteudo__formulario__botoes">
