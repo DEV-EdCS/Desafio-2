@@ -1,5 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    /* Brand */
+    --brand-primaria: #f67841;
+    --brand-secundaria: #f3541c;
+    --brand-terciaria: #e43a12;
+    --brand-quartenaria: #2135a6;
+
+    /* Text */
+    --text-primary: #292524;
+    --text-secondary: #57534e;
+    --text-terciary: #8f8881;
+    --text-highligth: #e43a12;
+
+    /* Surface */
+    --surface-primary: #ffffff;
+    --surface-secondary: #fee7d6;
+    --surface-disabled: #e7e5e4;
+
+    /* Stroke */
+    --stroke-default: #d6d3d1;
+    --stroke-highlight: #f3541c;
+
+    /* Semantic */
+    --semantic-error: #dc2626;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,49 +36,69 @@ body {
     height: 100vh;
 }
 
-.trilhas {
-    position: relative;
-    display: inline-block;
+nav img {
+    width: 2.5rem;
+    /* Largura desejada */
 }
 
-.trilhas img {
-    display: block;
-    width: 100%;
-    height: auto;
+.cabecalho {
+    display: flex;
+    background-color: var(--brand-quartenaria);
+    height: 5rem;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 7%;
+    padding-right: 7%;
 }
 
-.trilhas__titulo {
-    position: absolute;
-    top: 25%;  
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: red;
-    color: white;
-    padding: 28px 32px;
-    text-decoration: none;
-    border-radius: 8px;
-    font-weight: bold;
-    z-index: 10;
+.cabecalho__logo {
+    width: 10rem;
+}
+
+.cabecalho__sociais {
+    display: flex;
+    gap: 0.7rem;
+}
+
+.cabecalho__logo,
+.cabecalho__sociais {
+    cursor: pointer;
+}
+
+main img {
+    
+}
+
+main {
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 64, 0.85), rgba(0, 0, 64, 0.85)), 
+    url("https://img.freepik.com/fotos-gratis/amigos-latinos-de-tom-medio-a-sair_23-2151139437.jpg?t=st=1743969557~exp=1743973157~hmac=fc188047985be76f5969d06ce4743e7cf610d52714834fa4e1368e06e990274f&w=1380");
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-blend-mode: multiply;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 10%;
+}
+
+.conteudo__edital{
+  width: 40rem;  
+}
+
+.conteudo__descricao {
+    font-size: 1.5rem;
     font-family: "Poppins", sans-serif;
-    font-weight: 700;
+    font-weight: 600;
     font-style: normal;
-    font-size: 30px;
+    color: var(--surface-secondary);
 }
 
-.trilhas__titulo::after {
-    content: "";
-    position: absolute;
-    top: -6px;
-    left: -5px;
-    right: -5px;
-    bottom: -6px;
-    border: 4px solid #fff;
-    border-radius: 10px;
-    animation: piscarBorda 0.8s infinite;
-}
-
-@keyframes piscarBorda {
-    0% {opacity: 1;}
-    50% {opacity: 0.3;}
-    100% {opacity: 1;}
+.conteudo__opcoes {
+    display: flex;
 }

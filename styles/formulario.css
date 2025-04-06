@@ -1,5 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+:root {
+    /* Brand */
+    --brand-primaria: #f67841;
+    --brand-secundaria: #f3541c;
+    --brand-terciaria: #e43a12;
+    --brand-quartenaria: #2135a6;
+
+    /* Text */
+    --text-primary: #292524;
+    --text-secondary: #57534e;
+    --text-terciary: #8f8881;
+    --text-highligth: #e43a12;
+
+    /* Surface */
+    --surface-primary: #ffffff;
+    --surface-secondary: #fee7d6;
+    --surface-disabled: #e7e5e4;
+
+    /* Stroke */
+    --stroke-default: #d6d3d1;
+    --stroke-highlight: #f3541c;
+
+    /* Semantic */
+    --semantic-error: #dc2626;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -207,7 +233,7 @@ strong .conteudo__formulario__politica {
 
 fieldset {
     border: none;
-} 
+}
 
 span {
     display: flex;
@@ -309,13 +335,13 @@ input[type="submit"]:hover {
 /* Responsividade para telas até 1050px */
 @media (max-width: 1050px) {
     .conteudo {
-         /* Troca de grid para coluna única, com imagem abaixo do formulário */
+        /* Troca de grid para coluna única, com imagem abaixo do formulário */
         display: flex;
         flex-direction: column-reverse;
     }
 
     .conteudo__formulario {
-         /* Formulário ocupa quase toda a tela */
+        /* Formulário ocupa quase toda a tela */
         width: 90%;
         margin: auto;
         padding: 4%;
