@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+:root {
+    --brand-primaria: #f67841;
+    --brand-secundaria: #f3541c;
+    --brand-terciaria: #e43a12;
+    --brand-quartenaria: #2135a6;
+
+    --text-primary: #292524;
+    --text-secondary: #57534e;
+    --text-terciary: #8f8881;
+    --text-highligth: #e43a12;
+
+    --surface-primary: #ffffff;
+    --surface-secondary: #fee7d6;
+    --surface-disabled: #e7e5e4;
+
+    --stroke-default: #d6d3d1;
+    --stroke-highlight: #f3541c;
+
+    --semantic-error: #dc2626;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--surface-secondary);
+    color: var(--text-primary);
+    max-height: 100vh;
+}
+
+header {
+    background-color: var(--brand-quartenaria);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1% 4%;
+}
+
+header img {
+    width: 20rem;
+}
+
+header a img {
+    width: 2.5rem;
+}
+
+h1 {
+    color: var(--surface-primary);
+    display: flex;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.perfil {
+    background-color: var(--surface-primary);
+    border-radius: 1rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: 5% 20%;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.perfil label {
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.perfil input {
+    padding: 0.75rem;
+    border: 1px solid var(--stroke-default);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    background-color: var(--surface-disabled);
+    transition: background-color 0.3s, border-color 0.3s;
+}
+
+.perfil input:focus {
+    background-color: var(--surface-primary);
+    border-color: var(--stroke-highlight);
+    outline: none;
+}
+
+.perfil__form {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+}
+
+h2,
+input {
+    margin-bottom: 1.5rem;
+}
+
+button {
+    display: flex;
+    justify-content: center;
+    width: 30%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: var(--brand-primaria);
+    color: var(--surface-primary);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: var(--brand-secundaria);
+}
+
+.mensagem {
+    margin-top: 1rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+.mensagem-sucesso {
+    color: var(--brand-quartenaria);
+}
+
+.mensagem.erro {
+    color: var(--semantic-error);
+}
+
+footer {
+    background-color: var(--brand-terciaria);
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    color: var(--surface-primary);
+    font-size: 0.8rem;
+}

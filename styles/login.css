@@ -1,0 +1,164 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background-image: linear-gradient(rgba(0, 0, 64, 0.85), rgba(0, 0, 64, 0.85)),
+        url("https://img.freepik.com/fotos-gratis/amigos-latinos-de-tom-medio-a-sair_23-2151139437.jpg?t=st=1743969557~exp=1743973157~hmac=fc188047985be76f5969d06ce4743e7cf610d52714834fa4e1368e06e990274f&w=1380");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+:root {
+    /* Brand */
+    --brand-primaria: #f67841;
+    --brand-secundaria: #f3541c;
+    --brand-terciaria: #e43a12;
+    --brand-quartenaria: #2135a6;
+
+    /* Text */
+    --text-primary: #292524;
+    --text-secondary: #57534e;
+    --text-terciary: #8f8881;
+    --text-highligth: #e43a12;
+
+    /* Surface */
+    --surface-primary: #ffffff;
+    --surface-secondary: #fee7d6;
+    --surface-disabled: #e7e5e4;
+
+    /* Stroke */
+    --stroke-default: #d6d3d1;
+    --stroke-highlight: #f3541c;
+
+    /* Semantic */
+    --semantic-error: #dc2626;
+}
+
+.conteudo__formulario__voltar {
+    display: flex;
+    align-items: center;
+    margin: 2rem;
+    text-decoration: none;
+    color: var(--surface-primary);
+    font-weight: 500;
+    gap: 0.5rem;
+}
+
+.conteudo__formulario__voltar-seta {
+    width: 1.2rem;
+}
+
+form#login-form {
+    background-color: var(--surface-primary);
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+form#login-form h2 {
+    color: var(--brand-quartenaria);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+form#login-form label {
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+form#login-form input {
+    padding: 0.8rem;
+    border: 1px solid var(--stroke-default);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+form#login-form button {
+    background-color: var(--brand-quartenaria);
+    color: #fff;
+    padding: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form#login-form button:hover {
+    background-color: var(--brand-terciaria);
+}
+
+.mensagem-erro {
+    color: var(--semantic-error);
+    font-size: 0.9rem;
+    text-align: center;
+}
+
+footer {
+    background-color: var(--brand-terciaria);
+    height: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer p {
+    color: var(--surface-primary);
+    font-size: 0.8rem;
+}
+
+/* Telas até 1050px - Tablets grandes e notebooks pequenos */
+@media (max-width: 1050px) {
+        form#login-form {
+        width: 90%;
+    }
+}
+
+/* Telas até 768px - Tablets e celulares na horizontal */
+@media (max-width: 768px) {
+    .rodape__creditos,
+    footer p {
+        font-size: 0.7rem;
+        text-align: center;
+        margin: 0% 10% 0% 10%;
+    }
+}
+
+/* Telas até 480px - Celulares */
+@media (max-width: 480px) {
+    form#login-form h2 {
+        font-size: 1.5rem;
+    }
+
+    form#login-form label {
+        font-size: 0.95rem;
+    }
+
+    form#login-form input,
+    form#login-form button {
+        font-size: 1rem;
+        padding: 0.7rem;
+    }
+
+    .rodape__creditos,
+    footer p {
+        font-size: 0.7rem;
+        text-align: center;
+        margin: 0% 10% 0% 10%;
+    }
+}

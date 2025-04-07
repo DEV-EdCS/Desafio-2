@@ -20,6 +20,7 @@ formulario.addEventListener("submit", (e) => {
 
     const listaRespostas = {
         "nome": e.target.elements["nome"].value,
+        "senha": e.target.elements["senha"].value,
         "aniversario": e.target.elements["aniversario"].value,
         "cpf": e.target.elements["cpf"].value,
         "genero": e.target.elements["genero"].value,

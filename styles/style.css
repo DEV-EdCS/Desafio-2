@@ -65,17 +65,16 @@ nav img {
     cursor: pointer;
 }
 
-main img {
-    
-}
-
 main {
     height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 64, 0.85), rgba(0, 0, 64, 0.85)), 
-    url("https://img.freepik.com/fotos-gratis/amigos-latinos-de-tom-medio-a-sair_23-2151139437.jpg?t=st=1743969557~exp=1743973157~hmac=fc188047985be76f5969d06ce4743e7cf610d52714834fa4e1368e06e990274f&w=1380");
-    background-size: cover; /* Faz a imagem cobrir toda a tela */
-    background-position: center; /* Centraliza a imagem */
-    background-repeat: no-repeat; /* Evita repetição da imagem */
+    background-image: linear-gradient(rgba(0, 0, 64, 0.85), rgba(0, 0, 64, 0.85)),
+        url("https://img.freepik.com/fotos-gratis/amigos-latinos-de-tom-medio-a-sair_23-2151139437.jpg?t=st=1743969557~exp=1743973157~hmac=fc188047985be76f5969d06ce4743e7cf610d52714834fa4e1368e06e990274f&w=1380");
+    background-size: cover;
+    /* Faz a imagem cobrir toda a tela */
+    background-position: center;
+    /* Centraliza a imagem */
+    background-repeat: no-repeat;
+    /* Evita repetição da imagem */
     background-blend-mode: multiply;
 }
 
@@ -87,11 +86,12 @@ main {
     padding: 10%;
 }
 
-.conteudo__edital{
-  width: 40rem;  
+.conteudo__edital {
+    width: 40rem;
 }
 
 .conteudo__descricao {
+    text-align: center;
     font-size: 1.5rem;
     font-family: "Poppins", sans-serif;
     font-weight: 600;
@@ -101,4 +101,111 @@ main {
 
 .conteudo__opcoes {
     display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+    color: var(--surface-primary);
+}
+
+.conteudo__opcoes__link {
+    display: flex;
+    color: var(--brand-quartenaria);
+    background-color: var(--surface-secondary);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.conteudo__opcoes__link:hover {
+    background-color: var(--brand-quartenaria);
+    color: #fff;
+}
+
+.rodape {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--brand-terciaria);
+    height: 5rem;
+    padding-left: 7%;
+    padding-right: 7%;
+}
+
+.rodape__creditos {
+    color: var(--surface-primary);
+    font-size: 0.8rem;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Telas até 1050px - Tablets grandes e notebooks pequenos */
+@media (max-width: 1050px) {
+    .conteudo {
+        padding: 10%;
+    }
+
+    .conteudo__edital {
+        width: 80%;
+    }
+}
+
+/* Telas até 768px - Tablets e celulares na horizontal */
+@media (max-width: 768px) {
+    .cabecalho {
+        flex-direction: column;
+        height: auto;
+        gap: 1rem;
+        padding: 1rem;
+    }
+
+    .cabecalho__logo {
+        width: 8rem;
+    }
+
+    .conteudo__opcoes {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .conteudo__opcoes__link {
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Telas até 480px - Celulares */
+@media (max-width: 480px) {
+    .conteudo {
+        gap: 1.5rem;
+        padding: 2rem 1rem;
+    }
+
+    .conteudo__edital {
+        width: 100%;
+    }
+
+    .conteudo__descricao {
+        font-size: 1rem;
+    }
+
+    .conteudo__opcoes {
+        gap: 1rem;
+    }
+
+    .conteudo__opcoes__link {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+    }
+
+    .rodape__creditos,
+    footer p {
+        font-size: 0.7rem;
+        text-align: center;
+    }
 }
