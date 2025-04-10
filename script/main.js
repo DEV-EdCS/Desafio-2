@@ -89,6 +89,9 @@ const mensagens = {
         patternMismatch: "Por favor, preencha um nome válido.",
         tooShort: "Por favor, preencha um nome válido."
     },
+    senha: {
+        valueMissing: "O campo de senha não pode estar vazio.",
+    },
     aniversario: {
         valueMissing: 'O campo de data de nascimento não pode estar vazio.',
         customError: 'Você deve ser maior que 18 anos para se cadastrar.'
