@@ -104,4 +104,9 @@ Você só precisa de um navegador moderno como **Chrome**, **Firefox** ou **Edge
 ## Desenvolvido por
 
 **Edlan Carvalho Silva** e **Luis Carlos Costa da Silva**
+<<<<<<< HEAD
 Projeto criado para o Desafio 3 do **Trilhas Inova Maranhão**.
+=======
+
+Projeto criado para o Desafio 3 do **Trilhas Inova Maranhão**.
+>>>>>>> 7499481e7261012fb4f519cb51cdefb4345902e3
